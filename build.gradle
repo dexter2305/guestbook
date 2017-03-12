@@ -1,0 +1,37 @@
+group 'com.dexterlab.apps'
+version '1.0'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+    apply plugin: 'java'
+
+    dependencies {
+        //SLF4J-Facade
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
+        //SLF4J-Implementation
+        runtime group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
+        //TestNG
+        testCompile group: 'org.testng', name: 'testng', version: '6.10'
+
+    }
+    test.useTestNG()
+}
+subprojects {
+
+}
+
+apply plugin: 'application'
+mainClassName = 'com.dexterlab.apps.gb.Application'
+
+dependencies {
+    compile(project(':wui'))
+
+}
+
+jar{
+    manifest{
+        attributes 'Main-Class': 'com.dexterlab.apps.gb.Application'
+    }
+}

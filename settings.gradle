@@ -1,0 +1,6 @@
+rootProject.name = 'guestbook'
+include 'models'
+include 'dao'
+include 'service'
+include 'wui'
+

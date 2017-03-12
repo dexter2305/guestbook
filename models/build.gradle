@@ -1,0 +1,4 @@
+group 'com.dexterlab.apps'
+version '1.0'
+sourceCompatibility = 1.8
+
